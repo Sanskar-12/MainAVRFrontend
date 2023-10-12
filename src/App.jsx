@@ -16,15 +16,15 @@ import UserPage from "./components/Users/UserPage";
 function App() {
   const dispatch = useDispatch()
 
-  const id = sessionStorage.userId
+  // const id = sessionStorage.userId
   
-  if(id){
+  // if(id){
     useEffect(() => {
     dispatch(getUserDetailAction())
     
   }, [dispatch])
     
-  }
+  // }
   
   
   return (
