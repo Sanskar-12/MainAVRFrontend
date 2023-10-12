@@ -2,6 +2,7 @@ import {Line} from 'react-chartjs-2'
 import {Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement} from 'chart.js' 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { server } from '../../store';
 
 ChartJS.register(
     LineElement,
@@ -16,7 +17,7 @@ export default function LineChart(){
 
     useEffect(() => {
         console.log(selectedMonth);
-        axios.get('http://localhost:9090/api/'+`${selectedMonth}`).then(response => {
+        axios.get(`${server}/${selectedMonth}`).then(response => {
           console.log(response.data);
           const fetchedData = response.data; 
           
