@@ -38,7 +38,12 @@ export const getUserDetailAction = () => async (dispatch) => {
       type: "loadUserRequest",
     });
 
-    const { data } = await axios.get(`${server}/me`);
+
+    const config={
+      withCredentials: true,
+    }
+
+    const { data } = await axios.get(`${server}/me`,config);
 
     dispatch({
       type: "loadUserSuccess",
