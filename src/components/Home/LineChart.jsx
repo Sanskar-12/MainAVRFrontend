@@ -17,7 +17,7 @@ export default function LineChart(){
 
     useEffect(() => {
         console.log(selectedMonth);
-        axios.get(`${server}/${selectedMonth}`).then(response => {
+        axios.get(`${server}`+`${selectedMonth}`).then(response => {
           console.log(response.data);
           const fetchedData = response.data; 
           
